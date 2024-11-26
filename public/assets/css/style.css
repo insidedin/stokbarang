@@ -1,0 +1,87 @@
+:root {
+    --default-font: 'Poppins', sans-serif;
+    --heading-font: 'Poppins', sans-serif;
+    --nav-font: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--default-font);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+h2, h3 {
+    font-family: var(--heading-font);
+}
+
+navbar {
+    font-family: var(--nav-font);
+    position: fixed;
+}
+
+.home-background {
+    background-image: url('/assets/img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.home-background h2  {
+    font-size: 40px;
+    font-weight: 500;
+    margin-left: 10rem;
+}
+.home-background p  {
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 10rem;
+}
+
+.home-background .btn-primary {
+    font-size: 18px;
+    margin-left: 10rem;
+}
+
+.about-section {
+    height: 100vh;
+}
+
+.product-section {
+    background-color: rgb(226, 226, 226);
+    height: 100vh;
+}
+
+
+/* scroll */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+}
+
+.login-card {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+
