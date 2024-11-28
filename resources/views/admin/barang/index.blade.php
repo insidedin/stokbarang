@@ -44,8 +44,12 @@
                     @forelse ($barangs as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->nama_barang }}</td>
-                        <td><img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->nama_barang }}" width="50"></td>
+                        <td>{{ $item->produk->nama_barang }}</td> <!-- Mengambil nama barang dari relasi produk -->
+                        <td>
+                            <img src="{{ asset('storage/' . $item->produk->gambar) }}"
+                                    alt="{{ $item->produk->nama_barang }}"
+                                    width="50">
+                        </td> <!-- Mengambil gambar dari relasi produk -->
                         <td>{{ $item->jumlah_barang }}</td>
                         <td>{{ $item->tanggal_masuk }}</td>
                         <td>

@@ -10,14 +10,12 @@
         @csrf
         @method('PUT')
         <div class="mb-3">
-            <label for="barang_id" class="form-label">Pilih Barang</label>
-            <select name="barang_id" id="barang_id" class="form-control" required>
-                @foreach ($barangs as $item)
-                    <option value="{{ $item->id }}" {{ $produk->barang_id == $item->id ? 'selected' : '' }}>
-                        {{ $item->nama_barang }}
-                    </option>
-                @endforeach
-            </select>
+            <label for="nama_barang" class="form-label">Nama Produk</label>
+            <input type="text" name="nama_barang" id="nama_barang" class="form-control" value="{{ $produk->nama_barang }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="gambar" class="form-label">Gambar Barang</label>
+            <input type="file" name="gambar" id="gambar" class="form-control" value="{{ $produk->gambar }}">
         </div>
         <div class="mb-3">
             <label for="stok" class="form-label">Stok</label>

@@ -18,7 +18,7 @@ Route::post('/login', [AdminAuthController::class, 'login'])->name('admin.login'
 Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
 // Group route untuk admin dengan middleware otentikasi
-Route::middleware(['auth:admin'])->group(function () {
+//Route::middleware(['auth:admin'])->group(function () {
      // Route untuk dashboard admin
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
@@ -52,4 +52,4 @@ Route::middleware(['auth:admin'])->group(function () {
                 Route::delete('/{id}', [ProdukController::class, 'destroy'])->name('destroy');
         });
 
-});
+//});

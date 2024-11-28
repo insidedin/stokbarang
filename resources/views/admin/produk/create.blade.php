@@ -6,16 +6,15 @@
 <div class="container mt-5">
     <h2>Tambah Produk</h2>
 
-    <form action="{{ route('produk.store') }}" method="POST">
+    <form action="{{ route('produk.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <label for="barang_id" class="form-label">Pilih Barang</label>
-            <select name="barang_id" id="barang_id" class="form-control" required>
-                <option value="">-- Pilih Barang --</option>
-                @foreach ($barangs as $item)
-                    <option value="{{ $item->id }}">{{ $item->nama_barang }}</option>
-                @endforeach
-            </select>
+            <label for="nama_barang" class="form-label">Nama Produk</label>
+            <input type="text" name="nama_barang" id="nama_barang" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="gambar" class="form-label">Gambar Barang</label>
+            <input type="file" name="gambar" id="gambar" class="form-control" required>
         </div>
         <div class="mb-3">
             <label for="stok" class="form-label">Stok</label>

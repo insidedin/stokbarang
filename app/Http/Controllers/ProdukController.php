@@ -20,21 +20,23 @@ class ProdukController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'nama_barang' => 'required',
-            'gambar' => 'required|image',
-            'deskripsi' => 'required',
-        ]);
+    $request->validate([
+        'nama_barang' => 'required|string|max:255',
+        'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'deskripsi' => 'required|string',
+        'stok' => 'required|integer|min:0', // Validasi stok jika wajib diisi
+    ]);
 
-        Produk::create([
-            'nama_barang' => $request->nama_barang,
-            'gambar' => $request->file('gambar')->store('gambar_produk', 'public'),
-            'deskripsi' => $request->deskripsi,
-            'stok' => 0,  // Stok awal adalah 0
-        ]);
+    Produk::create([
+        'nama_barang' => $request->nama_barang,
+        'gambar' => $request->file('gambar')->store('gambar_produk', 'public'),
+        'deskripsi' => $request->deskripsi,
+        'stok' => $request->stok, // Masukkan stok dari form
+    ]);
 
-        return redirect()->route('produk.index')->with('success', 'Produk berhasil ditambahkan!');
+    return redirect()->route('produk.index')->with('success', 'Produk berhasil ditambahkan!');
     }
+
 
     public function edit($id)
     {

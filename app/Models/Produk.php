@@ -14,7 +14,7 @@ class Produk extends Model
     // Relasi ke barang
     public function barang()
     {
-        return $this->hasMany(Barang::class);
+        return $this->hasMany(Barang::class, 'produk_id');
     }
 
     // Fungsi untuk mengakumulasi stok produk
